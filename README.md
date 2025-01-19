@@ -18,7 +18,7 @@
 - 프레임워크와 독립적
 - 외부로 노출되는 구조를 독립적으로 유지 가능
 
-## DAO (Data Access Object)
+## 📩 DAO (Data Access Object)
 
 - DB와 App간의 상호작용을 추상화하는 디자인 패턴
 - CRUD 작업 관리
@@ -33,5 +33,14 @@
 - Controller와 Repository 사이의 중재자 역할
 - 트랜잭션 관리 (@Transactional을 통해 관리 가능)
 - DTO와 Entity 변환 (외부와 교환하기 위해 Entity를 DTO로 또는 그 반대로)
+
+## 🕹️ Controller
+
+- HTTP 요청을 처리하는 주요 역할
+- 요청을 매핑하여 URL 패턴과 HTTP 메서드에 맞는 메서드가 실행되도록 함
+- Service 계층을 호출하여 비지니스 로직을 처리
+- View 또는 API응답으로 변환
+- 입력 검증 및 예외 처리
+- @RestController = @Controller + @ResponseBody (주로 REST API에서 사용)
 
 
