@@ -26,3 +26,12 @@
 - 비지니스 로직과 DB로직 분리
 - Spring에서는 JpaRepository로 구현가능
 - `extends JpaRepository<Board, Long>`는 Board 엔티티의 ID(primary key)가 Long 타입임을 나타냄
+
+## ☕️ Service
+
+- 실제 비지니스 로직 처리
+- Controller와 Repository 사이의 중재자 역할
+- 트랜잭션 관리 (@Transactional을 통해 관리 가능)
+- DTO와 Entity 변환 (외부와 교환하기 위해 Entity를 DTO로 또는 그 반대로)
+
+
