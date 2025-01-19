@@ -1,3 +1,4 @@
+### 기본 파일 ###
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -34,3 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### H2 데이터베이스 파일 ###
+/data/*.mv.db
+/data/*.trace.db
+/data/*.h2.db
