@@ -33,7 +33,7 @@ public class BoardController {
 
     // 게시글 상세 조회
     @GetMapping("/{id}")
-    public ResponseEntity<BoardDTO> getBoard(@PathVariable Long id) {
+    public ResponseEntity<BoardDTO> getBoard(@PathVariable("id") Long id) {
         return ResponseEntity.ok(boardService.getBoardById(id));
     }
 
@@ -46,14 +46,14 @@ public class BoardController {
 
     // 게시글 수정
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateBoard(@PathVariable Long id, @RequestBody BoardDTO boardDTO) {
+    public ResponseEntity<String> updateBoard(@PathVariable("id") Long id, @RequestBody BoardDTO boardDTO) {
         boardService.updateBoard(id, boardDTO);
         return ResponseEntity.ok("Board updated successfully");
     }
 
     // 게시글 삭제
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteBoard(@PathVariable Long id) {
+    public ResponseEntity<String> deleteBoard(@PathVariable("id") Long id) {
         boardService.deleteBoard(id);
         return ResponseEntity.ok("Board deleted successfully");
     }

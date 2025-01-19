@@ -23,7 +23,7 @@ public class BoardService {
     public List<BoardDTO> getBoardList() {
         List<Board> boards = boardDAO.findAll();
         return boards.stream()
-                .map(board -> new BoardDTO(board.getId(), board.getTitle(), board.getContent(), board.getContent()))
+                .map(board -> new BoardDTO(board.getId(), board.getTitle(), board.getContent(), board.getAuthor()))
                 .collect(Collectors.toList());
     }
 
@@ -36,6 +36,7 @@ public class BoardService {
     // 게시글 작성
     public void saveBoard(BoardDTO boardDTO) {
         Board board = new Board();
+        board.setId(boardDTO.getId());
         board.setTitle(boardDTO.getTitle());
         board.setContent(boardDTO.getContent());
         board.setAuthor(boardDTO.getAuthor());
