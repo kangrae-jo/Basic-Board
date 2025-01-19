@@ -18,3 +18,11 @@
 - 프레임워크와 독립적
 - 외부로 노출되는 구조를 독립적으로 유지 가능
 
+## DAO (Data Access Object)
+
+- DB와 App간의 상호작용을 추상화하는 디자인 패턴
+- CRUD 작업 관리
+- 영속성 계층에 접근하는 기능을 모듈화
+- 비지니스 로직과 DB로직 분리
+- Spring에서는 JpaRepository로 구현가능
+- `extends JpaRepository<Board, Long>`는 Board 엔티티의 ID(primary key)가 Long 타입임을 나타냄
