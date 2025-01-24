@@ -3,6 +3,7 @@ package core.basicboard.service;
 import core.basicboard.dao.BoardDAO;
 import core.basicboard.dto.BoardDTO;
 import core.basicboard.entity.Board;
+import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,6 +35,7 @@ public class BoardService {
     }
 
     // 게시글 작성
+    @Transactional
     public void saveBoard(BoardDTO boardDTO) {
         Board board = new Board();
         board.setId(boardDTO.getId());
@@ -46,6 +48,7 @@ public class BoardService {
     }
 
     // 게시글 수정
+    @Transactional
     public void updateBoard(Long id, BoardDTO boardDTO) {
         Board board = findBoardById(id);
         board.setTitle(boardDTO.getTitle());
@@ -56,6 +59,7 @@ public class BoardService {
     }
 
     // 게시글 삭제
+    @Transactional
     public void deleteBoard(Long id) {
         boardDAO.deleteById(id);
     }
