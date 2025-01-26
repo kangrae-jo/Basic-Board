@@ -67,5 +67,4 @@ public class BoardService {
     private Board findBoardById(Long id) {
         return boardDAO.findById(id).orElseThrow(() -> new IllegalArgumentException("[ERROR]: Invalid board ID"));
     }
-
 }
